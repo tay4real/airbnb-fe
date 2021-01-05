@@ -1,0 +1,57 @@
+.navbar {
+  .setting {
+    width: 130px;
+    height: 40px;
+  }
+  .box {
+    transition: all 1s;
+  }
+  .box:hover {
+    opacity: 5;
+    box-shadow: 2px 2px 2px rgb(184, 181, 181);
+    /* While entering from the right */
+  }
+
+  .search-container {
+    width: 18rem;
+    height: 3rem;
+  }
+  .search:not(:last-child) {
+    border-right: 1px solid #dddddd !important;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 80%;
+    right: 15px;
+    z-index: 1000;
+    width: 15rem !important;
+    border-radius: 10px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .dropdown-item {
+    padding: 10px 20px;
+  }
+
+  .notify_1 {
+    position: absolute;
+    bottom: 68%;
+    right: -3px;
+    padding: 5px;
+    color: white;
+    line-height: 0.4rem;
+    font-size: 0.7rem;
+    border: 2px solid white;
+  }
+
+  .notify_2 {
+    position: absolute;
+    bottom: 64%;
+    right: 54%;
+    padding: 3px;
+  }
+
+  
+}

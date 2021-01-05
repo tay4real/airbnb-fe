@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import NavBar from "./components/NavBar";
+import ListPlaces from "./components/ListPlaces";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from "./components/Home";
+import Host from "./components/Host";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+class App extends Component {
+  state = {
+    showUserSettings: false,
+  };
+
+  handleShowUserSettings = () => {
+    this.setState((prevState) => ({
+      showUserSettings: !prevState.showUserSettings,
+    }));
+  };
+  handleHideUserSettings = () => {
+    this.setState({ showUserSettings: false });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <NavBar
+            openUserSettings={this.handleShowUserSettings}
+            closeUserSettings={this.handleHideUserSettings}
+            userSetting={this.state.showUserSettings}
+          />
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => <Home {...routerProps} />}
+          />
+          <Route path="/s" exact component={ListPlaces} />
+          <Route path="/host/homes" exact component={Host} />
+          <Footer />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
