@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import Slider from "./Slider";
 
 class ListPlaces extends Component {
@@ -13,11 +14,9 @@ class ListPlaces extends Component {
 
   fetchPlaces = async () => {
     try {
-      const resp = await fetch("http://localhost:3005/places");
-      console.log(resp);
+      const resp = await fetch(process.env.REACT_APP_BE + "places");
       if (resp.ok) {
         let places = await resp.json();
-        console.log(places);
         setTimeout(() => {
           this.setState({
             places,
@@ -76,7 +75,6 @@ class ListPlaces extends Component {
 
   render() {
     const { places } = this.state;
-    console.log(places);
     return (
       <Container id="places" className="rounded">
         <div className="d-flex flex-column pt-5">
@@ -104,7 +102,7 @@ class ListPlaces extends Component {
             </div>
             <div>
               <span className="mr-2">
-                <i className="far fa-map"></i>
+                <i class="far fa-map"></i>
               </span>
               <span>Show map</span>
             </div>
@@ -139,6 +137,248 @@ class ListPlaces extends Component {
               </div>
             </div>
           ))}
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
+
+          <div className="col pb-5">
+            <div className="pb-4 slider">
+              <Slider />
+            </div>
+
+            <div>
+              <span>
+                <i className="fas fa-star text-danger"></i>
+              </span>{" "}
+              4.47<span> (19)</span>
+            </div>
+            <div className="font-size-1">
+              <span>Entire apartment</span> <span>·</span> <span>Lagos</span>{" "}
+            </div>
+            <div className="font-size-1">
+              Chic Studio Apartment In the Best Part of Lekki!{" "}
+            </div>
+            <div className="font-size-1">
+              <span className="bold">$50</span> / night
+            </div>
+          </div>
         </div>
 
         <div className="d-flex justify-content-between align-items-center pb-3">
